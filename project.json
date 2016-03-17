@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0-*",
+    "compilationOptions": {
+        "emitEntryPoint": true
+    },
+
+    "dependencies": {
+        "NETStandard.Library": "1.0.0-rc2-23811",
+        "System.Net.Http": "4.0.1-beta-23516",
+        "Newtonsoft.Json": "8.0.3",
+        "System.Runtime.Serialization.Primitives": "4.0.10",
+        "System.Dynamic.Runtime": "4.0.10",
+        "System.Xml.XDocument": "4.0.10"
+    },
+
+    "frameworks": {
+        "dnxcore50": { }
+    }
+}
