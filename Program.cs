@@ -69,7 +69,6 @@ namespace ConsoleApplication
 
         public static async Task<GithubReleaseModel> GetReleaseData(string link){
             using(HttpClient client = new HttpClient()){
-                        
                 client.DefaultRequestHeaders.TryAddWithoutValidation("Accept","application/vnd.github.v3+json");
                 client.DefaultRequestHeaders.TryAddWithoutValidation("user-agent", "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0)");
                 

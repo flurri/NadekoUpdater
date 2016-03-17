@@ -235,6 +235,26 @@
           "ref/dotnet5.4/System.IO.dll": {}
         }
       },
+      "System.IO.Compression/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.0",
+          "System.IO": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.0",
+          "System.Runtime.Extensions": "4.0.0",
+          "System.Runtime.InteropServices": "4.0.0",
+          "System.Text.Encoding": "4.0.0",
+          "System.Threading": "4.0.0",
+          "System.Threading.Tasks": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.IO.Compression.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.IO.Compression.dll": {}
+        }
+      },
       "System.IO.FileSystem/4.0.1-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -939,12 +959,6 @@
           "lib/dotnet5.4/System.Threading.Timer.dll": {}
         }
       },
-      "runtime.native.System.IO.Compression/4.1.0-rc2-23811": {
-        "type": "package",
-        "dependencies": {
-          "runtime.win7-x64.runtime.native.System.IO.Compression": "4.0.1-rc2-23811"
-        }
-      },
       "runtime.win.System.Runtime.InteropServices.RuntimeInformation/4.0.0-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -1114,12 +1128,6 @@
           "runtimes/win7-x64/native/ext-ms-win-advapi32-encryptedfile-l1-1-0.dll": {}
         }
       },
-      "runtime.win7-x64.runtime.native.System.IO.Compression/4.0.1-rc2-23811": {
-        "type": "package",
-        "native": {
-          "runtimes/win7-x64/native/clrcompression.dll": {}
-        }
-      },
       "runtime.win7.Microsoft.Win32.Primitives/4.0.1-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -1160,30 +1168,6 @@
         },
         "runtime": {
           "runtimes/win7/lib/DNXCore50/System.Diagnostics.Debug.dll": {}
-        }
-      },
-      "runtime.win7.System.IO.Compression/4.1.0-rc2-23811": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.0.0-rc2-23811",
-          "System.Collections": "4.0.10",
-          "System.Diagnostics.Debug": "4.0.10",
-          "System.IO": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.Extensions": "4.0.10",
-          "System.Runtime.Handles": "4.0.0",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10",
-          "System.Threading": "4.0.0",
-          "System.Threading.Tasks": "4.0.10",
-          "runtime.native.System.IO.Compression": "4.1.0-rc2-23811"
-        },
-        "compile": {
-          "ref/dotnet/_._": {}
-        },
-        "runtime": {
-          "runtimes/win7/lib/dotnet5.4/System.IO.Compression.dll": {}
         }
       },
       "runtime.win7.System.IO.FileSystem/4.0.1-rc2-23811": {
@@ -1417,22 +1401,6 @@
           "ref/dotnet5.6/System.AppContext.dll": {}
         }
       },
-      "System.Buffers/4.0.0-rc2-23811": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.Debug": "4.0.0",
-          "System.Diagnostics.Tracing": "4.0.0",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.0",
-          "System.Threading": "4.0.0"
-        },
-        "compile": {
-          "lib/dotnet5.2/System.Buffers.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet5.2/System.Buffers.dll": {}
-        }
-      },
       "System.Collections/4.0.11-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -1582,17 +1550,31 @@
           "ref/dotnet5.4/System.IO.dll": {}
         }
       },
-      "System.IO.Compression/4.1.0-rc2-23811": {
+      "System.IO.Compression/4.0.0": {
         "type": "package",
         "dependencies": {
+          "System.Collections": "4.0.0",
           "System.IO": "4.0.0",
+          "System.IO.Compression.clrcompression-x64": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
           "System.Runtime": "4.0.0",
+          "System.Runtime.Extensions": "4.0.0",
+          "System.Runtime.InteropServices": "4.0.0",
           "System.Text.Encoding": "4.0.0",
-          "System.Threading.Tasks": "4.0.0",
-          "runtime.win7.System.IO.Compression": "4.1.0-rc2-23811"
+          "System.Threading": "4.0.0",
+          "System.Threading.Tasks": "4.0.0"
         },
         "compile": {
-          "ref/dotnet5.4/System.IO.Compression.dll": {}
+          "ref/dotnet/System.IO.Compression.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.IO.Compression.dll": {}
+        }
+      },
+      "System.IO.Compression.clrcompression-x64/4.0.0": {
+        "type": "package",
+        "native": {
+          "runtimes/win7-x64/native/clrcompression.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1-rc2-23811": {
@@ -2523,12 +2505,6 @@
           "lib/dotnet5.4/System.Threading.Timer.dll": {}
         }
       },
-      "runtime.native.System.IO.Compression/4.1.0-rc2-23811": {
-        "type": "package",
-        "dependencies": {
-          "runtime.win7-x86.runtime.native.System.IO.Compression": "4.0.1-rc2-23811"
-        }
-      },
       "runtime.win.System.Runtime.InteropServices.RuntimeInformation/4.0.0-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -2690,12 +2666,6 @@
           "runtimes/win7-x86/native/ext-ms-win-advapi32-encryptedfile-l1-1-0.dll": {}
         }
       },
-      "runtime.win7-x86.runtime.native.System.IO.Compression/4.0.1-rc2-23811": {
-        "type": "package",
-        "native": {
-          "runtimes/win7-x86/native/clrcompression.dll": {}
-        }
-      },
       "runtime.win7.Microsoft.Win32.Primitives/4.0.1-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -2736,30 +2706,6 @@
         },
         "runtime": {
           "runtimes/win7/lib/DNXCore50/System.Diagnostics.Debug.dll": {}
-        }
-      },
-      "runtime.win7.System.IO.Compression/4.1.0-rc2-23811": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.0.0-rc2-23811",
-          "System.Collections": "4.0.10",
-          "System.Diagnostics.Debug": "4.0.10",
-          "System.IO": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.Extensions": "4.0.10",
-          "System.Runtime.Handles": "4.0.0",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10",
-          "System.Threading": "4.0.0",
-          "System.Threading.Tasks": "4.0.10",
-          "runtime.native.System.IO.Compression": "4.1.0-rc2-23811"
-        },
-        "compile": {
-          "ref/dotnet/_._": {}
-        },
-        "runtime": {
-          "runtimes/win7/lib/dotnet5.4/System.IO.Compression.dll": {}
         }
       },
       "runtime.win7.System.IO.FileSystem/4.0.1-rc2-23811": {
@@ -2993,22 +2939,6 @@
           "ref/dotnet5.6/System.AppContext.dll": {}
         }
       },
-      "System.Buffers/4.0.0-rc2-23811": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.Debug": "4.0.0",
-          "System.Diagnostics.Tracing": "4.0.0",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.0",
-          "System.Threading": "4.0.0"
-        },
-        "compile": {
-          "lib/dotnet5.2/System.Buffers.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet5.2/System.Buffers.dll": {}
-        }
-      },
       "System.Collections/4.0.11-rc2-23811": {
         "type": "package",
         "dependencies": {
@@ -3158,17 +3088,31 @@
           "ref/dotnet5.4/System.IO.dll": {}
         }
       },
-      "System.IO.Compression/4.1.0-rc2-23811": {
+      "System.IO.Compression/4.0.0": {
         "type": "package",
         "dependencies": {
+          "System.Collections": "4.0.0",
           "System.IO": "4.0.0",
+          "System.IO.Compression.clrcompression-x86": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
           "System.Runtime": "4.0.0",
+          "System.Runtime.Extensions": "4.0.0",
+          "System.Runtime.InteropServices": "4.0.0",
           "System.Text.Encoding": "4.0.0",
-          "System.Threading.Tasks": "4.0.0",
-          "runtime.win7.System.IO.Compression": "4.1.0-rc2-23811"
+          "System.Threading": "4.0.0",
+          "System.Threading.Tasks": "4.0.0"
         },
         "compile": {
-          "ref/dotnet5.4/System.IO.Compression.dll": {}
+          "ref/dotnet/System.IO.Compression.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.IO.Compression.dll": {}
+        }
+      },
+      "System.IO.Compression.clrcompression-x86/4.0.0": {
+        "type": "package",
+        "native": {
+          "runtimes/win7-x86/native/clrcompression.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1-rc2-23811": {
@@ -4351,17 +4295,6 @@
         "runtimes/aot/lib/netcore50/_._"
       ]
     },
-    "runtime.native.System.IO.Compression/4.1.0-rc2-23811": {
-      "sha512": "8XOReMWsmzIlGE6ep/u3PtYPkEpSTfRmllEGA5DZkCEMPThlEHiFJvOIgNVfOmqh83mUFEhBpDRpC9/EEL5NNA==",
-      "type": "package",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "runtime.json",
-        "runtime.native.System.IO.Compression.4.1.0-rc2-23811.nupkg.sha512",
-        "runtime.native.System.IO.Compression.nuspec"
-      ]
-    },
     "runtime.win.System.Runtime.InteropServices.RuntimeInformation/4.0.0-rc2-23811": {
       "sha512": "2CqbXuUh/6DNFIL/MSYx2tTeonKfu3IExNhQLHpOUmmbeWEhvuEzxQFPswbyMXrfTUjoRY+Y2HhEfdkrLbN8zA==",
       "type": "package",
@@ -4541,18 +4474,6 @@
         "runtimes/win7-x64/native/ext-ms-win-advapi32-encryptedfile-l1-1-0.dll"
       ]
     },
-    "runtime.win7-x64.runtime.native.System.IO.Compression/4.0.1-rc2-23811": {
-      "sha512": "0/2B65Xgd8LHs9fXVGDy6pXY3Uh/UwROdODICeI/OHjfpXOy9pG5a5F0XX3nvxaK5z6D6+zMDSIavhqw2k7GqQ==",
-      "type": "package",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "runtime.win7-x64.runtime.native.System.IO.Compression.4.0.1-rc2-23811.nupkg.sha512",
-        "runtime.win7-x64.runtime.native.System.IO.Compression.nuspec",
-        "runtimes/win10-x64/native/clrcompression.dll",
-        "runtimes/win7-x64/native/clrcompression.dll"
-      ]
-    },
     "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR/1.0.1-rc2-23811": {
       "sha512": "sqJrEQLRncq6XCAwc2bslPwCQABaoFUJN8FJsQlXOhxJSJ+TBHJfI4W349cu54FedJjgyD2j90yZDcpKnzWksQ==",
       "type": "package",
@@ -4706,18 +4627,6 @@
         "runtimes/win7-x86/native/ext-ms-win-advapi32-encryptedfile-l1-1-0.dll"
       ]
     },
-    "runtime.win7-x86.runtime.native.System.IO.Compression/4.0.1-rc2-23811": {
-      "sha512": "7DPw8vovhbZ1a8urbuWWj/J8iuWeCxYwI/FoH+XEKNNFr0JuEeRDLR01lr/bLhWhtMiKMOiUH9Cd6yXRFCnE3g==",
-      "type": "package",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "runtime.win7-x86.runtime.native.System.IO.Compression.4.0.1-rc2-23811.nupkg.sha512",
-        "runtime.win7-x86.runtime.native.System.IO.Compression.nuspec",
-        "runtimes/win10-x86/native/clrcompression.dll",
-        "runtimes/win7-x86/native/clrcompression.dll"
-      ]
-    },
     "runtime.win7.Microsoft.Win32.Primitives/4.0.1-rc2-23811": {
       "sha512": "fdR3A3xDfDIpLwXab9sCATMBDvOAbxhW7aBxjLJa5LiYRJ0S/PD8S+QVoNntqqaplPkHImpa2wVniZVIt7FpbA==",
       "type": "package",
@@ -4756,23 +4665,6 @@
         "runtimes/win7/lib/DNXCore50/System.Diagnostics.Debug.dll",
         "runtimes/win7/lib/netcore50/System.Diagnostics.Debug.dll",
         "runtimes/win8-aot/lib/netcore50/System.Diagnostics.Debug.dll"
-      ]
-    },
-    "runtime.win7.System.IO.Compression/4.1.0-rc2-23811": {
-      "sha512": "t9NY3fw6UVTSF/59p3Rxcl7dF6F2eB2aorw89ycaTyujPGKbzmNrJ2wCLnA0jsL8bxNM139EfjkJQjR11tjwfg==",
-      "type": "package",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "ref/dotnet/_._",
-        "runtime.win7.System.IO.Compression.4.1.0-rc2-23811.nupkg.sha512",
-        "runtime.win7.System.IO.Compression.nuspec",
-        "runtimes/win7/lib/dotnet5.4/System.IO.Compression.dll",
-        "runtimes/win7/lib/net/_._",
-        "runtimes/win7/lib/netcore50/System.IO.Compression.dll",
-        "runtimes/win7/lib/win8/_._",
-        "runtimes/win7/lib/wp8/_._",
-        "runtimes/win7/lib/wpa81/_._"
       ]
     },
     "runtime.win7.System.IO.FileSystem/4.0.1-rc2-23811": {
@@ -4970,18 +4862,6 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json"
-      ]
-    },
-    "System.Buffers/4.0.0-rc2-23811": {
-      "sha512": "hAZNWyaNnhDo0arb4Z9DVzRTBp2PqR6jJMevKVow+5DDgsukla7VrHw2SxURJvVpXJsMOIE4rkHucdTc0GOgNA==",
-      "type": "package",
-      "files": [
-        "System.Buffers.4.0.0-rc2-23811.nupkg.sha512",
-        "System.Buffers.nuspec",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/dotnet5.2/.xml",
-        "lib/dotnet5.2/System.Buffers.dll"
       ]
     },
     "System.Collections/4.0.11-rc2-23811": {
@@ -5545,64 +5425,62 @@
         "runtime.json"
       ]
     },
-    "System.IO.Compression/4.1.0-rc2-23811": {
-      "sha512": "/C680EsOZhSFdswbqe196iYUaOFamcT8qDlXejNN6ER01OCJq+AlbaFgw/UyCLSYB03T+MBbtJexKxpVBsmSXA==",
+    "System.IO.Compression/4.0.0": {
+      "sha512": "S+ljBE3py8pujTrsOOYHtDg2cnAifn6kBu/pfh1hMWIXd8DoVh0ADTA6Puv4q+nYj+Msm6JoFLNwuRSmztbsDQ==",
       "type": "package",
       "files": [
-        "System.IO.Compression.4.1.0-rc2-23811.nupkg.sha512",
+        "System.IO.Compression.4.0.0.nupkg.sha512",
         "System.IO.Compression.nuspec",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
+        "lib/dotnet/System.IO.Compression.dll",
         "lib/net45/_._",
-        "lib/net46/System.IO.Compression.dll",
+        "lib/netcore50/System.IO.Compression.dll",
         "lib/win8/_._",
         "lib/wpa81/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/dotnet5.2/System.IO.Compression.dll",
-        "ref/dotnet5.2/System.IO.Compression.xml",
-        "ref/dotnet5.2/de/System.IO.Compression.xml",
-        "ref/dotnet5.2/es/System.IO.Compression.xml",
-        "ref/dotnet5.2/fr/System.IO.Compression.xml",
-        "ref/dotnet5.2/it/System.IO.Compression.xml",
-        "ref/dotnet5.2/ja/System.IO.Compression.xml",
-        "ref/dotnet5.2/ko/System.IO.Compression.xml",
-        "ref/dotnet5.2/ru/System.IO.Compression.xml",
-        "ref/dotnet5.2/zh-hans/System.IO.Compression.xml",
-        "ref/dotnet5.2/zh-hant/System.IO.Compression.xml",
-        "ref/dotnet5.4/System.IO.Compression.dll",
-        "ref/dotnet5.4/System.IO.Compression.xml",
-        "ref/dotnet5.4/de/System.IO.Compression.xml",
-        "ref/dotnet5.4/es/System.IO.Compression.xml",
-        "ref/dotnet5.4/fr/System.IO.Compression.xml",
-        "ref/dotnet5.4/it/System.IO.Compression.xml",
-        "ref/dotnet5.4/ja/System.IO.Compression.xml",
-        "ref/dotnet5.4/ko/System.IO.Compression.xml",
-        "ref/dotnet5.4/ru/System.IO.Compression.xml",
-        "ref/dotnet5.4/zh-hans/System.IO.Compression.xml",
-        "ref/dotnet5.4/zh-hant/System.IO.Compression.xml",
+        "ref/dotnet/System.IO.Compression.dll",
+        "ref/dotnet/System.IO.Compression.xml",
+        "ref/dotnet/de/System.IO.Compression.xml",
+        "ref/dotnet/es/System.IO.Compression.xml",
+        "ref/dotnet/fr/System.IO.Compression.xml",
+        "ref/dotnet/it/System.IO.Compression.xml",
+        "ref/dotnet/ja/System.IO.Compression.xml",
+        "ref/dotnet/ko/System.IO.Compression.xml",
+        "ref/dotnet/ru/System.IO.Compression.xml",
+        "ref/dotnet/zh-hans/System.IO.Compression.xml",
+        "ref/dotnet/zh-hant/System.IO.Compression.xml",
         "ref/net45/_._",
-        "ref/net46/System.IO.Compression.dll",
         "ref/netcore50/System.IO.Compression.dll",
         "ref/netcore50/System.IO.Compression.xml",
-        "ref/netcore50/de/System.IO.Compression.xml",
-        "ref/netcore50/es/System.IO.Compression.xml",
-        "ref/netcore50/fr/System.IO.Compression.xml",
-        "ref/netcore50/it/System.IO.Compression.xml",
-        "ref/netcore50/ja/System.IO.Compression.xml",
-        "ref/netcore50/ko/System.IO.Compression.xml",
-        "ref/netcore50/ru/System.IO.Compression.xml",
-        "ref/netcore50/zh-hans/System.IO.Compression.xml",
-        "ref/netcore50/zh-hant/System.IO.Compression.xml",
         "ref/win8/_._",
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json"
+      ]
+    },
+    "System.IO.Compression.clrcompression-x64/4.0.0": {
+      "sha512": "Lqr+URMwKzf+8HJF6YrqEqzKzDzFJTE4OekaxqdIns71r8Ufbd8SbZa0LKl9q+7nu6Em4SkIEXVMB7plSXekOw==",
+      "type": "package",
+      "files": [
+        "System.IO.Compression.clrcompression-x64.4.0.0.nupkg.sha512",
+        "System.IO.Compression.clrcompression-x64.nuspec",
+        "runtimes/win10-x64/native/ClrCompression.dll",
+        "runtimes/win7-x64/native/clrcompression.dll"
+      ]
+    },
+    "System.IO.Compression.clrcompression-x86/4.0.0": {
+      "sha512": "GmevpuaMRzYDXHu+xuV10fxTO8DsP7OKweWxYtkaxwVnDSj9X6RBupSiXdiveq9yj/xjZ1NbG+oRRRb99kj+VQ==",
+      "type": "package",
+      "files": [
+        "System.IO.Compression.clrcompression-x86.4.0.0.nupkg.sha512",
+        "System.IO.Compression.clrcompression-x86.nuspec",
+        "runtimes/win10-x86/native/ClrCompression.dll",
+        "runtimes/win7-x86/native/clrcompression.dll"
       ]
     },
     "System.IO.FileSystem/4.0.1-rc2-23811": {
@@ -7804,6 +7682,7 @@
       "NETStandard.Library >= 1.0.0-rc2-23811",
       "Newtonsoft.Json >= 8.0.3",
       "System.Dynamic.Runtime >= 4.0.10",
+      "System.IO.Compression >= 4.0.0",
       "System.Net.Http >= 4.0.1-beta-23516",
       "System.Runtime.Serialization.Primitives >= 4.0.10",
       "System.Xml.XDocument >= 4.0.10"

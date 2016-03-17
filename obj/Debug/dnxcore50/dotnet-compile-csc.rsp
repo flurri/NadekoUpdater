@@ -22,6 +22,7 @@
 -r:"C:\Users\Master\.nuget\packages\System.Globalization\4.0.11-rc2-23811\ref\dotnet5.4\System.Globalization.dll"
 -r:"C:\Users\Master\.nuget\packages\System.Globalization.Calendars\4.0.1-rc2-23811\ref\dotnet5.4\System.Globalization.Calendars.dll"
 -r:"C:\Users\Master\.nuget\packages\System.IO\4.1.0-rc2-23811\ref\dotnet5.4\System.IO.dll"
+-r:"C:\Users\Master\.nuget\packages\System.IO.Compression\4.0.0\ref\dotnet\System.IO.Compression.dll"
 -r:"C:\Users\Master\.nuget\packages\System.IO.FileSystem\4.0.1-rc2-23811\ref\dotnet5.4\System.IO.FileSystem.dll"
 -r:"C:\Users\Master\.nuget\packages\System.IO.FileSystem.Primitives\4.0.1-rc2-23811\ref\dotnet5.4\System.IO.FileSystem.Primitives.dll"
 -r:"C:\Users\Master\.nuget\packages\System.Linq\4.0.2-rc2-23811\ref\dotnet5.1\System.Linq.dll"
