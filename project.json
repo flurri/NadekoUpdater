@@ -11,7 +11,8 @@
         "System.Runtime.Serialization.Primitives": "4.0.10",
         "System.Dynamic.Runtime": "4.0.10",
         "System.Xml.XDocument": "4.0.10",
-        "System.IO.Compression": "4.0.0"
+        "System.IO.Compression": "4.0.0",
+        "System.IO.Compression.ZipFile": "4.0.0"
     },
 
     "frameworks": {
