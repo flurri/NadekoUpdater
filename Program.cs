@@ -26,9 +26,9 @@ namespace ConsoleApplication
             while (true)
             {
             DateTime lastUpdate;
-            if (!File.Exists("version.txt"))
-                File.WriteAllText("version.txt", "");
-            if (!DateTime.TryParse(File.ReadAllText("version.txt"), out lastUpdate))
+            if (!File.Exists("../version.txt"))
+                File.WriteAllText("../version.txt", "");
+            if (!DateTime.TryParse(File.ReadAllText("../version.txt"), out lastUpdate))
                 lastUpdate = DateTime.MinValue;
             LastUpdate = lastUpdate;
             WriteLine("........................................");
@@ -75,7 +75,7 @@ namespace ConsoleApplication
                 WriteLine("You already have an up-to-date version!", ConsoleColor.Red);
                 return false;
             }
-            WriteLine("Newer version found!\n\nAre you sure you want to update? (y or n)", ConsoleColor.Magenta);
+            WriteLine("Newer version found!\n\nAre you sure you want to update? (y or n)\n\n Your current version will be backed up to NadekoBot_old folder. Always check the github release page to see if credentials or config files need updating", ConsoleColor.Magenta);
             return Console.ReadLine().ToLower() == "y" || Console.ReadLine().ToLower() == "yes";
         }
 
@@ -94,21 +94,22 @@ namespace ConsoleApplication
                     var arch = new ZipArchive(stream);
                     cancelSource.Cancel();
                     await waitTask;
-                    WriteLine("Backing up old version...", ConsoleColor.DarkYellow);
-                    if (Directory.Exists("NadekoBot"))
+                    
+                    if (Directory.Exists("../NadekoBot"))
                     {
-                        if (Directory.Exists("NadekobBot_old"))
+                        WriteLine("Backing up old version...", ConsoleColor.DarkYellow);
+                        if (Directory.Exists("../NadekobBot_old"))
                         {
-                            Directory.Delete("NadekoBot_old", true);
+                            Directory.Delete("../NadekoBot_old", true);
                         }
-                        DirectoryCopy(@".\NadekoBot", @".\NadekoBot_old", true);
+                        DirectoryCopy(@"../NadekoBot", @"../NadekoBot_old", true);
                     }
                     WriteLine("Saving...", ConsoleColor.Green);
-                    arch.ExtractToDirectory(@".\NadekoBot_new");
-                    DirectoryCopy(@".\NadekoBot_new",@".\NadekoBot",true);
+                    arch.ExtractToDirectory(@"../NadekoBot_new");
+                    DirectoryCopy(@"../NadekoBot_new",@"../NadekoBot",true);
                     
-                    File.WriteAllText("version.txt", data.PublishedAt.ToString());
-                    Directory.Delete(@".\NadekoBot_new", true);
+                    File.WriteAllText("../version.txt", data.PublishedAt.ToString());
+                    Directory.Delete(@"../NadekoBot_new", true);
                     WriteLine("Done!");
                 }
             }
