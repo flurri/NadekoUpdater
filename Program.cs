@@ -13,13 +13,6 @@ namespace ConsoleApplication
         public static DateTime LastUpdate { get; set; }
         public static void Main(string[] args)
         {
-            DateTime lastUpdate;
-            if (!File.Exists("version.txt"))
-                File.WriteAllText("version.txt", "");
-            if (!DateTime.TryParse(File.ReadAllText("version.txt"), out lastUpdate))
-                lastUpdate = DateTime.MinValue;
-            LastUpdate = lastUpdate;
-            System.Console.WriteLine("Current version release date: " + LastUpdate);
 
             MainAsync().Wait();
             WriteLine("***PROGRAM ENDED***", ConsoleColor.Red);
@@ -32,6 +25,14 @@ namespace ConsoleApplication
 
             while (true)
             {
+            DateTime lastUpdate;
+            if (!File.Exists("version.txt"))
+                File.WriteAllText("version.txt", "");
+            if (!DateTime.TryParse(File.ReadAllText("version.txt"), out lastUpdate))
+                lastUpdate = DateTime.MinValue;
+            LastUpdate = lastUpdate;
+            WriteLine("........................................");
+            System.Console.WriteLine("Current version release date: " + LastUpdate);
                 WriteLine("PICK AN OPTION: (type 1-3)", ConsoleColor.Magenta);
                 WriteLine("1. Check for newest stable release.", ConsoleColor.Magenta);
                 WriteLine("2. Check for any newest release.", ConsoleColor.Magenta);
@@ -54,7 +55,7 @@ namespace ConsoleApplication
                     if (input == "2")
                     {
                         WriteLine("Getting data...");
-                        var data = await GetReleaseData("https://api.github.com/repos/Kwoth/NadekoBot/releases/latest");
+                        var data = await GetReleaseData("https://api.github.com/repos/Kwoth/NadekoBot/releases", true);
                         if (ConfirmReleaseUpdate(data))
                             await Update(data);
                         continue;
@@ -74,8 +75,8 @@ namespace ConsoleApplication
                 WriteLine("You already have an up-to-date version!", ConsoleColor.Red);
                 return false;
             }
-            WriteLine("Newer version found!\n\nAre you sure you want to update? (Y or N)", ConsoleColor.Magenta);
-            return Console.ReadLine().ToLower() == "y";
+            WriteLine("Newer version found!\n\nAre you sure you want to update? (y or n)", ConsoleColor.Magenta);
+            return Console.ReadLine().ToLower() == "y" || Console.ReadLine().ToLower() == "yes";
         }
 
         private static async Task Update(GithubReleaseModel data)
@@ -103,8 +104,11 @@ namespace ConsoleApplication
                         DirectoryCopy(@".\NadekoBot", @".\NadekoBot_old", true);
                     }
                     WriteLine("Saving...", ConsoleColor.Green);
-                    arch.ExtractToDirectory(@".\NadekoBot");
+                    arch.ExtractToDirectory(@".\NadekoBot_new");
+                    DirectoryCopy(@".\NadekoBot_new",@".\NadekoBot",true);
+                    
                     File.WriteAllText("version.txt", data.PublishedAt.ToString());
+                    Directory.Delete(@".\NadekoBot_new", true);
                     WriteLine("Done!");
                 }
             }
@@ -114,7 +118,7 @@ namespace ConsoleApplication
             }
         }
 
-        public static async Task<GithubReleaseModel> GetReleaseData(string link)
+        public static async Task<GithubReleaseModel> GetReleaseData(string link, bool prerelease = false)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -122,7 +126,11 @@ namespace ConsoleApplication
                 client.DefaultRequestHeaders.TryAddWithoutValidation("user-agent", "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0)");
 
                 var response = await client.GetStringAsync(link);
-                var release = JsonConvert.DeserializeObject<GithubReleaseModel>(response);
+                GithubReleaseModel release;
+                if(!prerelease)
+                    release = JsonConvert.DeserializeObject<GithubReleaseModel>(response);
+                else
+                    release = JsonConvert.DeserializeObject<GithubReleaseModel>(Newtonsoft.Json.Linq.JArray.Parse(response)[0].ToString());
                 Console.WriteLine($"\tReleased At: {release.PublishedAt}\n\tVersion: {release.VersionName}\n\tLink: {release.Assets[0].DownloadLink}");
                 return release;
             }
@@ -198,7 +206,7 @@ namespace ConsoleApplication
             foreach (FileInfo file in files)
             {
                 string temppath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(temppath, false);
+                file.CopyTo(temppath, true);
             }
 
             // If copying subdirectories, copy them and their contents to new location.
