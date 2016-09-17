@@ -47,7 +47,7 @@ namespace ConsoleApplication
                     if (input == "1")
                     {
                         WriteLine("Getting data...");
-                        var data = await GetReleaseData("https://api.github.com/repos/Kwoth/NadekoBot/releases/latest");
+                        var data = await GetReleaseData("https://api.github.com/repos/flurri/NadekoBot/releases/latest");
                         if (ConfirmReleaseUpdate(data))
                             await Update(data);
                         continue;
@@ -55,7 +55,7 @@ namespace ConsoleApplication
                     if (input == "2")
                     {
                         WriteLine("Getting data...");
-                        var data = await GetReleaseData("https://api.github.com/repos/Kwoth/NadekoBot/releases", true);
+                        var data = await GetReleaseData("https://api.github.com/repos/flurri/NadekoBot/releases", true);
                         if (ConfirmReleaseUpdate(data))
                             await Update(data);
                         continue;
